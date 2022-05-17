@@ -1,0 +1,141 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="import_game_libs" id="`py5drh..uGqNe2ADs[." y="-229" x="26">
+    <next>
+      <block type="create_map" id="2`ijTjbBNu6@C;pm2^5u">
+        <statement name="INIT">
+          <block type="placement_robot" id="@z}Gk%~2WueQ6h|fU*@f">
+            <field name="RDX">5</field>
+            <field name="RDY">2</field>
+            <next>
+              <block type="robot_control" id="OK.@7mDf3r$?8X?-h*2E">
+                <field name="RUP">W</field>
+                <field name="RDOWN">S</field>
+                <field name="RLEFT">A</field>
+                <field name="RRIGHT">D</field>
+                <next>
+                  <block type="add_obstacle_h" id="5waiQ2WQ3DkvBX/un5_g">
+                    <field name="ODY">1</field>
+                    <field name="ODX1">4</field>
+                    <field name="ODX2">16</field>
+                    <next>
+                      <block type="add_obstacle_h" id="G?*HC#K_7#ii,^?6*05^">
+                        <field name="ODY">14</field>
+                        <field name="ODX1">5</field>
+                        <field name="ODX2">15</field>
+                        <next>
+                          <block type="add_obstacle_h" id="hQTpOR#qOgYa75jZT6{d">
+                            <field name="ODY">10</field>
+                            <field name="ODX1">8</field>
+                            <field name="ODX2">12</field>
+                            <next>
+                              <block type="add_obstacle_v" id="u@MZ)hC]d!N5HQ/~c?f:">
+                                <field name="ODX">4</field>
+                                <field name="ODY1">2</field>
+                                <field name="ODY2">14</field>
+                                <next>
+                                  <block type="add_obstacle_v" id="+U+yVziGa^9}{|vY@gF{">
+                                    <field name="ODX">16</field>
+                                    <field name="ODY1">2</field>
+                                    <field name="ODY2">14</field>
+                                    <next>
+                                      <block type="add_obstacle" id="d*KF^m,e[a/*SX;5Pbkr">
+                                        <field name="ODX">7</field>
+                                        <field name="ODY">5</field>
+                                        <next>
+                                          <block type="add_obstacle" id="]B4N%:n]./++g?V|w$kT">
+                                            <field name="ODX">8</field>
+                                            <field name="ODY">5</field>
+                                            <next>
+                                              <block type="add_obstacle" id="5W}SExP@wrHHa_nasQyF">
+                                                <field name="ODX">12</field>
+                                                <field name="ODY">5</field>
+                                                <next>
+                                                  <block type="add_obstacle" id="D=Rwx8|!}.b`p{v.JY*j">
+                                                    <field name="ODX">13</field>
+                                                    <field name="ODY">5</field>
+                                                    <next>
+                                                      <block type="add_obstacle" id="G48s6j]e8[Dvk*`X(J?j">
+                                                        <field name="ODX">7</field>
+                                                        <field name="ODY">6</field>
+                                                        <next>
+                                                          <block type="add_obstacle" id="H{8(LX}h4Ql7R]x;=D~7">
+                                                            <field name="ODX">8</field>
+                                                            <field name="ODY">6</field>
+                                                            <next>
+                                                              <block type="add_obstacle" id="mu^gw$Z-9vedBum!_rDS">
+                                                                <field name="ODX">12</field>
+                                                                <field name="ODY">6</field>
+                                                                <next>
+                                                                  <block type="add_obstacle" id="1vXZGgcNWQmA9dm:m^z-">
+                                                                    <field name="ODX">13</field>
+                                                                    <field name="ODY">6</field>
+                                                                    <next>
+                                                                      <block type="add_box" id="1,ouB!0vW=[Y6i;t$n8M">
+                                                                        <field name="BDX">6</field>
+                                                                        <field name="BDY">3</field>
+                                                                        <next>
+                                                                          <block type="add_box" id="DHA3g1?.rft1FsMJr9c#">
+                                                                            <field name="BDX">10</field>
+                                                                            <field name="BDY">6</field>
+                                                                            <next>
+                                                                              <block type="add_box" id="N1NSak!5@p#x;]7YgHC=">
+                                                                                <field name="BDX">7</field>
+                                                                                <field name="BDY">10</field>
+                                                                                <next>
+                                                                                  <block type="add_target" id="Ldq%RyRjeD.IkqNh!cF6">
+                                                                                    <field name="TDX">9</field>
+                                                                                    <field name="TDY">3</field>
+                                                                                    <next>
+                                                                                      <block type="add_target" id="*M[QVDZm9@Aj|/@5~f#!">
+                                                                                        <field name="TDX">11</field>
+                                                                                        <field name="TDY">3</field>
+                                                                                        <next>
+                                                                                          <block type="add_target" id=":}u?}#j{nSd#JW%?}XP*">
+                                                                                            <field name="TDX">15</field>
+                                                                                            <field name="TDY">10</field>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,9 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="text_print" id="Tu}5ZcF_zDIlO,acO~B^" x="16" y="60">
+    <value name="TEXT">
+      <shadow type="text" id="B:9ic^@Q#X8_7`mlwB9c">
+        <field name="TEXT">hello ks</field>
+      </shadow>
+    </value>
+  </block>
+</xml>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KS IDE</title>
+  <script type="text/javascript" src="res/blockly/js/blockly_compressed.js"></script>
+  <script type="text/javascript" src="res/blockly/js/blocks_compressed.js"></script>
+  <script type="text/javascript" src="res/blockly/js/zh-hans.js"></script>
+  <script type="text/javascript" src="res/blockly/js/ks_compressed.js"></script>
+	<script type="text/javascript" src="res/blockly/js/zh-hans_ex.js"></script>
+	<script type="text/javascript" src="res/ace/js/ace.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+     #editor { 
+        margin: 0;
+        position: absolute;
+        top: 12px;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+    }
+  </style>
+  <script type="text/javascript">
+  function translate() {
+	  var code = Blockly.Ks.workspaceToCode(ksbWorkspace);
+	  editor.session.setValue(code);
+  }
+  
+  function openKsb(bCode) {
+	  ksbWorkspace.clear();
+	  var xml = Blockly.Xml.textToDom(bCode);
+	  Blockly.Xml.domToWorkspace(xml, ksbWorkspace);
+  }
+  
+	function getBCode() {
+		translate();
+		var xml = Blockly.Xml.workspaceToDom(ksbWorkspace);
+		var xml_text = Blockly.Xml.domToPrettyText(xml);
+	  return xml_text;
+  }
+  
+  function getCode(){
+	  translate();
+	  return Blockly.Ks.workspaceToCode(ksbWorkspace);
+  }
+  
+  function initUI() {
+		
+		var winWidth = 0;
+    var winHeight = 0;
+    
+    if (window.innerWidth) {
+    	winWidth = window.innerWidth;
+    } else if ((document.body) && (document.body.clientWidth)) {
+			winWidth = document.body.clientWidth;
+    }
+    
+    if (window.innerHeight) {
+    	winHeight = window.innerHeight;
+    } else if ((document.body) && (document.body.clientHeight)) {
+			winHeight = document.body.clientHeight;
+    }
+    
+    if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+    	winHeight = document.documentElement.clientHeight;
+    	winWidth = document.documentElement.clientWidth;
+    }
+    
+    if (document.getElementById("blocklyDiv")) {
+    	console.log(document.getElementById("editor").style.top);
+    	document.getElementById("blocklyDiv").style.width = winWidth*0.6 + "px";
+    	document.getElementById("blocklyDiv").style.height = winHeight*0.95 + "px";
+    }
+    if (document.getElementById("editor")) {
+    	console.log(document.getElementById("editor").style.top);
+    	document.getElementById("editor").style.left = (winWidth*0.6 + 20) + "px";
+    }
+  }
+  
+  // window.onresize=initUI;
+  
+  </script>
+</head>
+<body onload="initUI">
+ 
+<table width="100%" height="100%">
+<tr>
+  <td width="60%">
+  <div id="blocklyDiv" ></div>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <category name="逻辑" colour="#00ffff">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      
+    </category>
+    <category name="循环" colour="#000000">
+    	<block type="controls_whileUntil"></block>
+      
+      <block type="controls_for">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_flow_statements"></block>
+      
+    </category>
+    <category name="数学" colour="#0000ff">
+      <block type="math_number">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+    <category name="文本" colour="#ff00ff">
+      <block type="text"></block>
+      <block type="text_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      
+    </category>
+    
+    <category name="颜色" colour="#ff0000">
+      <block type="colour_picker"></block>
+      
+    </category>
+    <category name="变量" colour="#808080" custom="VARIABLE"></category>
+    <!-- category name="函数" colour="#000080" custom="PROCEDURE"></category-->
+    <sep></sep>
+    <category name="基础包" colour="#008000">
+    	<block type="import_game_libs"></block>
+    	<block type="import_screen_libs"></block>
+    </category>
+    <category name="推箱游戏" colour="#00ff00">
+      <block type="create_map"></block>
+      <block type="placement_robot"></block>
+      <block type="robot_control"></block>
+      <block type="add_obstacle"></block>
+      <block type="add_obstacle_h"></block>
+      <block type="add_obstacle_v"></block>
+      <block type="add_box"></block>
+      <block type="add_target"></block>
+    </category>
+    <category name="像素屏" colour="#800000">
+      <block type="open_serial_port"></block>
+      <block type="close_serial_port"></block>
+      <block type="waitting"></block>
+      <block type="clear_screen"></block>
+      <block type="end_and_display"></block>
+      <block type="get_time_str"></block>
+      <block type="out_pixel"></block>
+      <block type="out_str"></block>
+      <block type="out_vline"></block>
+      <block type="out_hline"></block>
+    </category>
+    
+  </xml>
+  </td>
+  <td valign="top">
+<!-- input type="button" value="翻译" onclick="translate()"/-->
+<pre id="editor" ></pre>
+
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+	
+	var ksbWorkspace = Blockly.inject('blocklyDiv',{
+		media: 'res/blockly/img/',
+	  toolbox: document.getElementById('toolbox')
+	});
+
+  var editor = ace.edit("editor");
+  editor.setReadOnly(true);
+  editor.setTheme("ace/theme/vibrant_ink");
+  editor.session.setMode("ace/mode/ks");
+  
+  editor.setOptions({
+	  highlightActiveLine:false,
+	  showPrintMargin: false
+  });
+  
+  initUI();
+  Blockly.svgResize(ksbWorkspace);
+
+</script>
+</body>
+</html>

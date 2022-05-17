@@ -1,0 +1,65 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="import_screen_libs" id="nV:=`bADw/v;EJ^KUmc(" y="-35" x="24">
+    <next>
+      <block type="open_serial_port" id=",t3O{F*(YRK=;A~r=%`_">
+        <field name="SP">COM5</field>
+        <field name="BR">9600</field>
+        <next>
+          <block type="waitting" id="V={oG244fr;aCL|8;x9y">
+            <field name="MS">50</field>
+            <next>
+              <block type="controls_whileUntil" id="docp5TT}R^V@FA/kGcWo">
+                <field name="MODE">WHILE</field>
+                <value name="BOOL">
+                  <block type="logic_compare" id="]}M#?ajyp{u1qgZjSPYg">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="math_number" id="cvm^:zAgSsc.pe{Azinq">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id=";MZ#oQvh|bJc+IGm1rpR">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="clear_screen" id=".tpnZF9~fN1nDfSbwm1|">
+                    <next>
+                      <block type="out_str" id="I;`G~c_6]t]O9+~..E?T">
+                        <field name="SDX">0</field>
+                        <field name="SDY">6</field>
+                        <value name="SSTR">
+                          <block type="get_time_str" id="Xn2,cl_9C6_/Q5OM~nKi" />
+                        </value>
+                        <value name="SCOLOR">
+                          <block type="colour_picker" id="{cA]4+I[EQZBHun7]Q8.">
+                            <field name="COLOUR">#ffcc00</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="end_and_display" id="kRL2nPc:j.NU7^mUp/8Q">
+                            <next>
+                              <block type="waitting" id="8mJU$,m1l0?w9V*a{i*V">
+                                <field name="MS">980</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="close_serial_port" id="83k]Ib?#yBGZQZ4#gQu:" />
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
